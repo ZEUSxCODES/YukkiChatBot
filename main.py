@@ -271,7 +271,7 @@ async def init():
                         pass
 
     @app.on_message(
-        filters.group & ~filters.edited & filters.user(SUDO_USERS),
+        filters.group & filters.user(SUDO_USERS),
         group=grouplist,
     )
     async def incoming_groups(_, message):
